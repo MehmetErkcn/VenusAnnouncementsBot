@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  telegram-forwarder:
+    image: telegram-forwarder-bot
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
